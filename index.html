@@ -6,124 +6,147 @@
     <title>Mathématiques - Haddad Lotfi</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .construction { background-color: #ffd966; color: #1e3c72; text-align: center; padding: 10px; margin-bottom: 20px; border-radius: 8px; font-weight: bold; }
-        .header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; background-color: #3a6ea5; display: flex; align-items: center; justify-content: center; font-size: 80px; overflow: hidden; border: 3px solid #ffd966; }
-        .profile-info h1 { font-size: 28px; margin-bottom: 10px; }
-        .profile-info h2 { font-size: 18px; font-weight: normal; margin-bottom: 8px; color: #ffd966; }
-        .profile-info p { font-size: 14px; opacity: 0.9; }
-        .menu { background: white; border-radius: 10px; padding: 15px 20px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
-        .menu a { color: #1e3c72; text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 25px; transition: all 0.3s; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f9; color: #333; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        /* En-tête */
+        .header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; border-radius: 15px; padding: 40px; margin-bottom: 30px; display: flex; align-items: center; gap: 30px; flex-wrap: wrap; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; background-color: white; overflow: hidden; border: 4px solid #ffd966; display: flex; align-items: center; justify-content: center; }
+        .profile-img img { width: 100%; height: 100%; object-fit: cover; }
+        .profile-info h1 { font-size: 30px; margin-bottom: 10px; }
+        .profile-info h2 { font-size: 18px; font-weight: normal; color: #ffd966; margin-bottom: 5px; }
+
+        /* Menu */
+        .menu { background: white; border-radius: 10px; padding: 10px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; position: sticky; top: 10px; z-index: 100; }
+        .menu a { color: #1e3c72; text-decoration: none; font-weight: bold; padding: 10px 18px; border-radius: 20px; transition: 0.3s; font-size: 13px; }
         .menu a:hover { background: #1e3c72; color: white; }
-        .section { background: white; border-radius: 10px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .section h2 { color: #1e3c72; border-bottom: 2px solid #ffd966; padding-bottom: 10px; margin-bottom: 20px; }
-        .file-list { margin-top: 15px; padding: 10px; background: #fafafa; border-radius: 8px; }
+
+        /* Sections */
+        .section { background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .section h2 { color: #1e3c72; border-bottom: 3px solid #ffd966; padding-bottom: 10px; margin-bottom: 20px; font-size: 20px; }
+        
+        /* Listes de fichiers */
+        .file-list { background: #fafafa; border-radius: 8px; padding: 15px; border: 1px solid #eee; }
         .file-list ul { list-style: none; }
-        .file-list li { padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center; }
-        .file-list a { color: #1e3c72; text-decoration: none; font-weight: bold; }
-        .file-list a:hover { color: #d9534f; text-decoration: underline; }
-        .legal { background: #e8f0fe; border-left: 4px solid #1e3c72; padding: 20px; margin: 30px 0; border-radius: 8px; }
-        footer { text-align: center; padding: 20px; color: #666; font-size: 14px; border-top: 1px solid #ddd; margin-top: 20px; }
-        @media (max-width: 768px) { .header { flex-direction: column; text-align: center; } }
+        .file-list li { padding: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+        .file-list a { color: #2a5298; text-decoration: none; font-weight: 600; }
+        .file-list a:hover { color: #d9534f; }
+
+        /* À propos & Gratuité avec étoiles */
+        .legal { background: #e8f0fe; border-left: 5px solid #1e3c72; padding: 25px; border-radius: 8px; margin-top: 20px; }
+        .status-list { list-style: none; margin-top: 10px; }
+        .status-list li { font-weight: bold; margin-bottom: 5px; padding-left: 25px; position: relative; }
+        .status-list li::before { content: "★"; position: absolute; left: 0; color: #f39c12; font-size: 18px; }
+
+        footer { text-align: center; padding: 30px; color: #777; border-top: 1px solid #ddd; margin-top: 30px; }
     </style>
 </head>
 <body>
 
-<div class="construction">
-    🚧 Ce site est en cours de construction - De nouvelles ressources seront ajoutées régulièrement 🚧
-</div>
-
 <div class="container">
-    <div class="header">
+    <header class="header">
         <div class="profile-img">
-    <img src="photo-profil.jpg" onerror="this.style.display='none'; this.parentElement.innerHTML='📐';" style="width:100%; height:100%; object-fit:cover;">
+            <img src="photo.jpg" alt="Haddad Lotfi" onerror="this.src='https://ui-avatars.com/api/?name=Haddad+Lotfi&background=3a6ea5&color=fff&size=150';">
         </div>
         <div class="profile-info">
             <h1>Haddad Lotfi</h1>
             <h2>Enseignant agrégé principal émérite en sciences mathématiques</h2>
-            <p>Institut Préparatoire aux Études d'Ingénieurs El Manar</p>
-            <p>Ancien élève à l'École Normale Supérieure de Bizerte</p>
+            <p>Institut Préparatoire aux Études d'Ingénieurs El Manar (IPEIEM)</p>
         </div>
-    </div>
+    </header>
 
-    <div class="menu">
+    <nav class="menu">
         <a href="#accueil">Accueil</a>
         <a href="#mp">MP</a>
         <a href="#mpsi">MPSI</a>
-        <a href="#pcpt">PC/PT</a>
-        <a href="#pcsi">PCSI/PTSI</a>
-        <a href="#concours">Concours</a>
-    </div>
+        <a href="#pcpt">PC / PT</a>
+        <a href="#pcsi">PCSI / PTSI</a>
+        <a href="#concours">Concours Tunisiens</a>
+        <a href="#liens">Liens & Contact</a>
+    </nav>
 
-    <div class="section" id="mp">
-        <h2>📘 MP (Deuxième année Mathématiques et Physique)</h2>
-        <div id="list-MP" class="file-list">Chargement des documents...</div>
-    </div>
-
-    <div class="section" id="mpsi">
-        <h2>📗 MPSI (Première année Mathématiques et Physique)</h2>
-        <div id="list-MPSI" class="file-list">Chargement des documents...</div>
-    </div>
-
-    <div class="section" id="pcpt">
-        <h2>🔬⚙️ PC/PT (Deuxièmes années Physique et Chimie / Physique et Technologie)</h2>
-        <div id="list-PCPT" class="file-list">Chargement des documents...</div>
-    </div>
-
-    <div class="section" id="pcsi">
-        <h2>🧪🛠️ PCSI/PTSI (Premières années)</h2>
-        <div id="list-PCSI" class="file-list">Chargement des documents...</div>
-    </div>
-
-    <div class="section" id="concours">
-        <h2>📂 Concours nationaux tunisiens</h2>
-        <div id="list-Concours" class="file-list">Chargement des documents...</div>
-    </div>
-
-    <div class="legal" id="accueil">
-        <h3>📢 À propos de ce site</h3>
+    <section class="section" id="accueil">
+        <h2>🏠 Accueil</h2>
+        <p>Bienvenue sur ce site dédié aux mathématiques pour les classes préparatoires.</p>
         <p>Ce site propose essentiellement des documents mathématiques au format PDF, librement téléchargeables.</p>
-        <p><strong>Les documents sont gratuits. Il est autorisé de les étudier, les imprimer et les diffuser gratuitement.</strong></p>
+    </section>
+
+    <section class="section" id="mp">
+        <h2>📘 MP (Deuxième année Mathématiques et Physique)</h2>
+        <div id="list-MP" class="file-list">Chargement...</div>
+    </section>
+
+    <section class="section" id="mpsi">
+        <h2>📗 MPSI (Première année Mathématiques et Physique)</h2>
+        <div id="list-MPSI" class="file-list">Chargement...</div>
+    </section>
+
+    <section class="section" id="pcpt">
+        <h2>📕 PC / PT (Deuxièmes années Physique-chimie et Préparatoire Technologie)</h2>
+        <div id="list-PCPT" class="file-list">Chargement...</div>
+    </section>
+
+    <section class="section" id="pcsi">
+        <h2>🧪 PCSI / PTSI (Premières années Physique-chimie et Préparatoire Technologie)</h2>
+        <div id="list-PCSI" class="file-list">Chargement...</div>
+    </section>
+
+    <section class="section" id="concours">
+        <h2>📂 Concours Nationaux tunisiens</h2>
+        <div id="list-Concours" class="file-list">Chargement...</div>
+    </section>
+
+    <section class="section" id="liens">
+        <h2>🔗 Page des liens et contacts</h2>
+        <div class="file-list">
+            <p>📧 Email : <a href="mailto:votre-email@exemple.com">votre-email@exemple.com</a></p>
+            <p>🌐 Site IPEIEM : <a href="https://www.ipeiem.rnu.tn/" target="_blank">Visiter le site de l'Institut</a></p>
+        </div>
+    </section>
+
+    <div class="legal">
+        <h3>📢 À propos de ce site</h3>
+        <p>Les documents sont gratuits. Il est autorisé de :</p>
+        <ul class="status-list">
+            <li>les étudier</li>
+            <li>les imprimer</li>
+            <li>les diffuser gratuitement</li>
+        </ul>
     </div>
 
     <footer>
-        <p>Haddad Lotfi - IPEI El Manar - Dernière mise à jour : Mars 2026</p>
+        <p>Haddad Lotfi - 2026</p>
     </footer>
 </div>
 
 <script>
-const GITHUB_API = "https://api.github.com";
+const USER = "lotfihaddad-dot";
+const REPO = "MathsSite";
+const GITHUB_API = `https://api.github.com/repos/${USER}/${REPO}/contents`;
 
-async function loadFiles(subFolder, elementId) {
+async function loadFiles(folderPath, elementId) {
     try {
-        const response = await fetch(`${GITHUB_API}/${subFolder}`);
+        const response = await fetch(`${GITHUB_API}/${folderPath}`);
+        if (!response.ok) throw new Error();
         const files = await response.json();
         let html = "<ul>";
-        
-        if (Array.isArray(files)) {
-            const pdfFiles = files.filter(f => f.name.toLowerCase().endsWith('.pdf'));
-            if (pdfFiles.length > 0) {
-                pdfFiles.forEach(f => {
-                    html += `<li>📄 <a href="${f.download_url}" target="_blank">${f.name}</a></li>`;
-                });
-                document.getElementById(elementId).innerHTML = html + "</ul>";
-            } else {
-                document.getElementById(elementId).innerHTML = "<em>Aucun PDF dans ce dossier.</em>";
-            }
-        }
+        const pdfFiles = files.filter(f => f.name.toLowerCase().endsWith('.pdf'));
+        pdfFiles.forEach(f => {
+            html += `<li>📄 <a href="${f.download_url}" target="_blank">${f.name}</a></li>`;
+        });
+        document.getElementById(elementId).innerHTML = pdfFiles.length > 0 ? html + "</ul>" : "<em>Aucun PDF.</em>";
     } catch (e) {
-        document.getElementById(elementId).innerHTML = "<em>Dossier non encore publié.</em>";
+        document.getElementById(elementId).innerHTML = "<em>Dossier vide ou en attente.</em>";
     }
 }
 
-// Lancement automatique
-loadFiles("MP", "list-MP");
-loadFiles("MPSI", "list-MPSI");
-loadFiles("PC_PT", "list-PCPT");
-loadFiles("PCSI_PTSI", "list-PCSI");
-loadFiles("Concours_nationaux_tunisiens", "list-Concours");
+window.onload = () => {
+    loadFiles("MP", "list-MP");
+    loadFiles("MPSI", "list-MPSI");
+    loadFiles("PC_PT", "list-PCPT");
+    loadFiles("PCSI_PTSI", "list-PCSI");
+    loadFiles("Concours", "list-Concours");
+};
 </script>
 </body>
 </html>
